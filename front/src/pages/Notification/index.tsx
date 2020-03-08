@@ -19,19 +19,17 @@ const Notification: React.FC = () => {
       <IonContent fullscreen>
         <IonCard>
           <IonCardContent>
-            <IonText>
-              {'Oba!\num amigo\nquer te ajudar'}
-            </IonText>
-            <IonChip>
-              <IonIcon color="danger" />
+            <IonText>{"Oba!\num amigo\nquer te ajudar"}</IonText>
+            <IonButton color="danger">
+              <IonIcon></IonIcon>
               <IonLabel>Icon Chip</IonLabel>
               <IonIcon name="close" />
-            </IonChip>
+            </IonButton>
             <IonChip outline>
               <IonIcon name="close-circle"></IonIcon>
             </IonChip>
-          </IonCardContent>
 
+          </IonCardContent>
         </IonCard>
       </IonContent>
     </IonPage>

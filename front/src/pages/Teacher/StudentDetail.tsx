@@ -25,7 +25,7 @@ interface StudentDetailsProps extends RouteComponentProps<{}> {}
 
 const StudentDetailPage: React.FC<StudentDetailsProps> = ({ match }) => {
   return (
-    <IonPage>
+    <IonPage class="background-app">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
