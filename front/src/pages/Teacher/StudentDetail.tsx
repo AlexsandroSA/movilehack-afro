@@ -30,7 +30,7 @@ const StudentDetailPage: React.FC<StudentDetailsProps> = ({ match }) => {
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton />
-            <IonTitle>Desempenho do aluno - Fulano De tal em Matemática</IonTitle>
+            <IonTitle>Fulano De tal em Matemática</IonTitle>
           </IonButtons>
         </IonToolbar>
       </IonHeader>

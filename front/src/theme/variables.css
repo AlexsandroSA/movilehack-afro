@@ -62,3 +62,13 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+ion-img.app-logo {
+  max-width: 190px;
+  margin: 0 auto;
+  margin-top: calc(50vh -  100px);
+}
+
+ion-content {
+  --background: #21C293;
+}

@@ -9,6 +9,7 @@ import ClassDetailPage from './pages/Teacher/ClassDetail';
 import StudentDetailPage from "./pages/Teacher/StudentDetail";
 import StudentHome from './pages/Student/Student';
 import Notification from './pages/Notification';
+import HomePage from './pages/Home';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -33,22 +34,35 @@ import './theme/variables.css';
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <Route path="/professor" component={TeacherHome} exact={true} />
-      <Route path="/aluno" component={StudentHome} exact={true} />
-      <Route path="/notification" component={Notification} exact={true} />
+      <Route
+        path="/professor"
+        component={TeacherHome}
+        exact={true}
+      />
+      <Route
+        path="/home"
+        component={HomePage}
+        exact={true}
+        />
+      <Route
+        path="/aluno"
+        component={StudentHome}
+        exact={true}
+      />
+      <Route
+        path="/notification"
+        component={Notification}
+        exact={true}
+      />
       <Route
         path="/professor/classe"
         component={ClassDetailPage}
         exact={true}
       />
-      <Route
-        path="/classe/aluno"
-        component={StudentDetailPage}
-        exact={true}
-      />
+      <Route path="/classe/aluno" component={StudentDetailPage} exact={true} />
       <Route
         path="/"
-        render={() => <Redirect to="/professor" />}
+        render={() => <Redirect to="/home" />}
         exact={true}
       />
     </IonReactRouter>

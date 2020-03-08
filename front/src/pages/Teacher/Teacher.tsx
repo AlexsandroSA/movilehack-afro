@@ -19,12 +19,12 @@ import {
 } from "@ionic/react";
 
 const classes = [
-  { name: "6 Ano A" },
-  { name: "7 Ano A" },
-  { name: "8 Ano A" },
-  { name: "9 Ano A" },
-  { name: "5 Ano A" },
-  { name: "4 Ano A" }
+  { name: "6 Ano A - Matemática" },
+  { name: "7 Ano A - Física" },
+  { name: "8 Ano A - Quimica" },
+  { name: "9 Ano A - Matemática" },
+  { name: "5 Ano A - Física" },
+  { name: "4 Ano A - Quimica" }
 ];
 
 const Teacher: React.FC = () => {
