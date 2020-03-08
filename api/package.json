@@ -1,0 +1,14 @@
+{
+  "name": "movile-afro-hack-api",
+  "version": "1.0.0",
+  "description": "Movile afro hack api ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm t"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
