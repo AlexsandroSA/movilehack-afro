@@ -8,7 +8,10 @@ import TeacherHome from './pages/Teacher/Teacher';
 import ClassDetailPage from './pages/Teacher/ClassDetail';
 import StudentDetailPage from "./pages/Teacher/StudentDetail";
 import StudentHome from './pages/Student/Student';
-import Notification from './pages/Notification';
+import {
+  NotificationMentorado,
+  NotificationMentor,
+} from './pages/Notification';
 import HomePage from './pages/Home';
 
 
@@ -43,15 +46,20 @@ const App: React.FC = () => (
         path="/home"
         component={HomePage}
         exact={true}
-        />
+      />
       <Route
         path="/aluno"
         component={StudentHome}
         exact={true}
       />
       <Route
-        path="/notification"
-        component={Notification}
+        path="/notification/mentorado"
+        component={NotificationMentorado}
+        exact={true}
+      />
+      <Route
+        path="/notification/mentor"
+        component={NotificationMentor}
         exact={true}
       />
       <Route
