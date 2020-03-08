@@ -1,34 +1,24 @@
-.hero {
-	width: 100%;
+.card {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
 
-.hero-item {
+.card--full {
 	width: 100%;
 }
 
-.progress {
-	width: 100%;
-	padding-left: 8px;
-	font-size: 1rem;
+.title {
+	font-size: 1.2rem;
+	color: #a2a4ab;
+	text-align: left;
+	margin-left: 14px;
 }
 
 .badges {
 	height: 50px;
 }
 
-.card {
-}
-
-.card-progress .item-inner {
-	padding-right: 0;
-}
-
-.mentor {
-	padding-bottom: 1rem;
-}
-
-.title {
-	padding-top: 1rem;
+.progress {
+	width: calc(100% - 16px);
+	padding-left: 8px;
 }
