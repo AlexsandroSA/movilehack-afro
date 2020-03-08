@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { RouteComponentProps } from "react-router-dom";
 import "./class-detail.css";
 import { Chart } from "chart.js";
@@ -353,7 +353,32 @@ const students = [
   }
 ];
 
+const fetch = () => {
+
+}
+
 const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
+
+  const [data, setData] = useState(students);
+
+  const search = (ev: any): void => {
+
+    const val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      const result = students.filter(item => {
+        return (
+          item.name.first.toLowerCase().indexOf(val.toLowerCase()) > -1 ||
+          item.name.last.toLowerCase().indexOf(val.toLowerCase()) > -1
+        );
+      });
+
+      setData(result);
+    } else {
+      setData(students);
+    }
+  }
+
   return (
     <IonPage>
       <IonHeader color="primary">
@@ -370,12 +395,12 @@ const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
       </IonHeader>
 
       <IonContent>
-        <iframe src="http://localhost:8000/graph3.html"></iframe>
+        <iframe src="http://graphs-afro.s3-website-sa-east-1.amazonaws.com/graph3.html"></iframe>
 
-        <IonSearchbar showCancelButton="always"></IonSearchbar>
+        <IonSearchbar showCancelButton="always" onIonChange={search}></IonSearchbar>
 
         <IonList>
-          {students.map(student => (
+          {data.map(student => (
             <IonItem button key={Math.random()} routerLink="/classe/aluno">
               <IonLabel>
                 {student.name.first} {student.name.last}
@@ -384,7 +409,7 @@ const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
             </IonItem>
           ))}
         </IonList>
-      </IonContent>
+        </IonContent>
     </IonPage>
   );
 };
