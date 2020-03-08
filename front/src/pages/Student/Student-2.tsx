@@ -86,9 +86,9 @@ const redirectAny = (id: number) => console.log('redirect', id);
 const Student: React.FC<RouteComponentProps> = ({ match, history }) => {
 
   setTimeout(() => {
-    history.push('/notification/mentor');
+    history.push('/notification/mentorado');
   }, 3000);
-  
+
   return (
     <IonPage>
       <IonHeader slot="start">

@@ -9,6 +9,7 @@ import TeacherHome from './pages/Teacher/Teacher';
 import ClassDetailPage from './pages/Teacher/ClassDetail';
 import StudentDetailPage from "./pages/Teacher/StudentDetail";
 import StudentHome from './pages/Student/Student';
+import StudentHome2 from './pages/Student/Student-2';
 import {
   NotificationMentorado,
   NotificationMentor,
@@ -45,8 +46,13 @@ const App: React.FC = () => (
         exact={true}
       />
       <Route
-        path="/aluno"
+        path="/aluno/1"
         component={StudentHome}
+        exact={true}
+      />
+      <Route
+        path="/aluno/2"
+        component={StudentHome2}
         exact={true}
       />
       <Route

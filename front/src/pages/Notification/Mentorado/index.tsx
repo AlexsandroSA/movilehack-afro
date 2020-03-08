@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import {
   IonContent,
   IonPage,
@@ -13,11 +13,14 @@ import {
   IonLabel,
   IonCardTitle,
   IonIcon,
-  IonCardHeader
-} from "@ionic/react";
+  IonCardHeader,
+  IonModal,
+} from '@ionic/react';
+
 import '../styles.css';
 
 const Notification: React.FC = () => {
+
   return (
     <IonPage>
       <IonContent className="ionContent">
@@ -30,11 +33,12 @@ const Notification: React.FC = () => {
               <IonCardContent className="ionCardContent">
                 <IonText className="textCard">Um amigo</IonText>
                 <IonText className="textCard">Quer te ajudar?</IonText>
+
                 <IonRow>
-                  <IonButton routerLink="/aluno?s=xmentorado" className='ionButton' color='danger'>
+                  <IonButton routerLink="/aluno/1" className='ionButton' color='danger'>
                     Cancel
                   </IonButton>
-                  <IonButton routerLink="/aluno?s=vmentorado" className='ionButton' color='success'>
+                  <IonButton routerLink="/aluno/1" className='ionButton' color='success'>
                     OK
                   </IonButton>
                 </IonRow>
@@ -42,6 +46,7 @@ const Notification: React.FC = () => {
             </IonCard>
           </IonRow>
         </IonGrid>
+
       </IonContent>
     </IonPage>
   );

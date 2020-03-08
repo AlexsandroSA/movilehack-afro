@@ -79,8 +79,8 @@ const Notification: React.FC = () => {
             </IonCard>
           </IonRow>
           <IonRow className='textCard'>
-            <IonButton routerLink="/aluno?s=xmentor" className='ionButton' color='danger'>Cancel</IonButton>
-            <IonButton routerLink="/aluno?s=vmentor" className='ionButton' color='success'>OK</IonButton>
+            <IonButton routerLink="/aluno/2" className='ionButton' color='danger'>Cancel</IonButton>
+            <IonButton routerLink="/aluno/2" className='ionButton' color='success'>OK</IonButton>
           </IonRow>
         </IonGrid>
       </IonContent>
