@@ -26,7 +26,7 @@ const student = {
     {
       id: 1,
       url: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/afro_avatar_male_man-512.png',
-      name: 'Miguel',
+      name: 'Dener',
       description: '',
     },
     {

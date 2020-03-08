@@ -44,7 +44,7 @@ const HomePage: React.FC<RouteComponentProps<{ name: string }>> = () => {
         </p>
 
         <p className="center-content">
-          <IonButton color="secondary" href="/aluno/2" fill="outline">
+          <IonButton color="secondary" href="/aluno" fill="outline">
             Aluno 2
           </IonButton>
         </p>
