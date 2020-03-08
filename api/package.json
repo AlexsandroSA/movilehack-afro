@@ -4,6 +4,7 @@
   "description": "Movile afro hack api ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm t"
   },
   "author": "",

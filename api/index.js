@@ -4,7 +4,7 @@ const Hapi = require("@hapi/hapi")
 
 const init = async () => {
   const server = Hapi.server({
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3001,
     host: process.env.HOST || "localhost"
   })
 
@@ -15,6 +15,18 @@ const init = async () => {
       return "Movile Hack Afro - Xpert"
     }
   })
+
+  server.route({
+    method: 'GET',
+    path: '/student',
+    handler: function (request, h) {
+      const mock = {
+        score: '20',
+      };
+
+      return mock;
+    }
+});
 
   await server.start();
 
