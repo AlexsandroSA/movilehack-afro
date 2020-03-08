@@ -55,19 +55,19 @@ const student = {
 const Notification: React.FC = () => {
   return (
     <IonPage>
-      <IonContent>
-        <IonGrid>
+      <IonContent className='ionContent'>
+        <IonGrid className='ionGrid'>
           <IonRow className='inronMentor'>
 
             <IonText className='textCardBold'>Quer ajudar</IonText>
             <IonText className='textCardBold'>Um amigo?</IonText>
-            <IonCard>
-              <IonCardContent>
+            <IonCard className='ionCard'>
+              <IonCardContent className='ionCardContent'>
                 <IonText>
                   - Mentoria de matemática as 1h
                 </IonText>
                 <h3 className="title">Mentorias</h3>
-                <IonList>
+                <IonList className='ionList'>
                   {student.mentors.map((mentor, i) => (
                     <IonItem key={i}>
                       <Avatar url={mentor.url} />
@@ -80,8 +80,8 @@ const Notification: React.FC = () => {
           </IonRow>
           <IonRow className='textCard'>
 
-            <IonButton color='danger'>Cancel</IonButton>
-            <IonButton color='success'>OK</IonButton>
+            <IonButton className='ionButton' color='danger'>Cancel</IonButton>
+            <IonButton className='ionButton' color='success'>OK</IonButton>
           </IonRow>
         </IonGrid>
       </IonContent>
