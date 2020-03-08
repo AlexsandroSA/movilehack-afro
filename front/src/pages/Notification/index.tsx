@@ -2,6 +2,9 @@ import React from 'react';
 import {
   IonContent,
   IonPage,
+  IonGrid,
+  IonCol,
+  IonRow,
   IonText,
   IonButton,
   IonCard,
@@ -16,21 +19,24 @@ import './index.css';
 const Notification: React.FC = () => {
   return (
     <IonPage>
-      <IonContent fullscreen>
-        <IonCard>
-          <IonCardContent>
-            <IonText>{"Oba!\num amigo\nquer te ajudar"}</IonText>
-            <IonButton color="danger">
-              <IonIcon></IonIcon>
-              <IonLabel>Icon Chip</IonLabel>
-              <IonIcon name="close" />
-            </IonButton>
-            <IonChip outline>
-              <IonIcon name="close-circle"></IonIcon>
-            </IonChip>
+      <IonContent>
 
-          </IonCardContent>
-        </IonCard>
+        <IonGrid>
+          <IonRow className='textRow'>
+            <IonText>OBA!</IonText>
+            <IonText>Um amigo</IonText>
+            <IonText>Quer te ajudar?</IonText>
+          </IonRow>
+          <IonRow>
+
+            <IonButton color='danger'>
+              Cancel
+            </IonButton>
+            <IonButton color='success'>
+              OK
+              </IonButton>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
