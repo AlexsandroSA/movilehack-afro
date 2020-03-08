@@ -354,6 +354,8 @@ const students = [
 ];
 
 const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
+
+
   return (
     <IonPage>
       <IonHeader color="primary">
@@ -370,7 +372,7 @@ const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
       </IonHeader>
 
       <IonContent>
-        <iframe src="http://localhost:8000/graph3.html"></iframe>
+        <iframe src="http://graphs-afro.s3-website-sa-east-1.amazonaws.com/graph3.html"></iframe>
 
         <IonSearchbar showCancelButton="always"></IonSearchbar>
 

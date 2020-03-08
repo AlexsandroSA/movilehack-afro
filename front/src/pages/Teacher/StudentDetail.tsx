@@ -40,7 +40,7 @@ const StudentDetailPage: React.FC<StudentDetailsProps> = ({ match }) => {
       </IonHeader>
 
       <IonContent>
-        <iframe src="http://localhost:8000/graph2.html"></iframe>
+        <iframe src="http://graphs-afro.s3-website-sa-east-1.amazonaws.com/graph2.html"></iframe>
       </IonContent>
     </IonPage>
   );

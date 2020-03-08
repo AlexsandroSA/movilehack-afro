@@ -80,8 +80,8 @@ const Notification: React.FC = () => {
           </IonRow>
           <IonRow className='textCard'>
 
-            <IonButton className='ionButton' color='danger'>Cancel</IonButton>
-            <IonButton className='ionButton' color='success'>OK</IonButton>
+            <IonButton className='ionButton' color='danger'>Não</IonButton>
+            <IonButton className='ionButton' color='success'>Aceito!</IonButton>
           </IonRow>
         </IonGrid>
       </IonContent>
