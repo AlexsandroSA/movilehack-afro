@@ -31,10 +31,10 @@ const Notification: React.FC = () => {
                 <IonText className='textCard'>Quer te ajudar?</IonText>
                 <IonRow>
 
-                  <IonButton className='ionButton' color='danger'>
+                  <IonButton routerLink="/aluno?s=xmentorado" className='ionButton' color='danger'>
                     Cancel
                   </IonButton>
-                  <IonButton className='ionButton' color='success'>
+                  <IonButton routerLink="/aluno?s=vmentorado" className='ionButton' color='success'>
                     OK
                   </IonButton>
                 </IonRow>
