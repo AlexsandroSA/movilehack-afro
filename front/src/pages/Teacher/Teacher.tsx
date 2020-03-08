@@ -16,6 +16,7 @@ import {
   IonItemOption,
   IonButtons,
   IonMenuButton,
+  IonBackButton,
   IonItemOptions,
   IonContent
 } from "@ionic/react";
@@ -32,6 +33,18 @@ const classes = [
 const Teacher: React.FC = () => {
   return (
     <IonPage>
+      <IonHeader color="primary">
+        <IonToolbar color="primary">
+          <IonButtons slot="start">
+            <IonBackButton
+              icon="buttonIcon"
+              defaultHref="/professor"
+              text="Voltar"
+            ></IonBackButton>
+            <IonTitle>Detalhes da classe</IonTitle>
+          </IonButtons>
+        </IonToolbar>
+      </IonHeader>
       <IonContent>
         <IonList>
           {classes.map(classe => (

@@ -33,14 +33,15 @@ const StudentDetailPage: React.FC<StudentDetailsProps> = ({ match }) => {
               icon="buttonIcon"
               defaultHref="/professor/classe"
               text="Voltar"
-            >
-            </IonBackButton>
+            ></IonBackButton>
             <IonTitle>Fulano De tal em Matemática</IonTitle>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent></IonContent>
+      <IonContent>
+        <iframe src="http://localhost:8000/graph2.html"></iframe>
+      </IonContent>
     </IonPage>
   );
 };

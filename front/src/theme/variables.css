@@ -72,3 +72,15 @@ ion-img.app-logo {
 ion-content {
   --background: #21C293;
 }
+
+p.center-content {
+  text-align: center;
+  margin: 2px 0;
+}
+
+iframe {
+  bottom: 0;
+  width: 100%;
+  border: 0;
+  height: 400px;
+}

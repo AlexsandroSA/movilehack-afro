@@ -44,12 +44,6 @@ const appPages: AppPage[] = [
     url: "/aluno",
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
-  },
-  {
-    title: "Aluno 2",
-    url: "/aluno",
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
   }
 ];
 

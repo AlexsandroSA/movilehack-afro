@@ -28,16 +28,26 @@ import {
 const HomePage: React.FC<RouteComponentProps<{ name: string }>> = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton autoHide={false}></IonMenuButton>
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
-
       <IonContent>
         <IonImg src="assets/logo_estude_facil.png" class="app-logo" />
+
+        <p className="center-content">
+          <IonButton color="secondary" href="/professor" fill="outline">
+            Professor
+          </IonButton>
+        </p>
+
+        <p className="center-content">
+          <IonButton color="secondary" href="/aluno" fill="outline">
+            Aluno 1
+          </IonButton>
+        </p>
+
+        <p className="center-content">
+          <IonButton color="secondary" href="/aluno/2" fill="outline">
+            Aluno 2
+          </IonButton>
+        </p>
       </IonContent>
     </IonPage>
   );
