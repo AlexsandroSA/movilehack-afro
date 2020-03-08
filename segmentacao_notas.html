@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <canvas id="myChart" width="400" height="400"></canvas>
+    
+    <script>
+
+        let backgroundColors = [
+            "#F77",
+            "#77F"
+        ]
+
+        let hoverBackgroundColors = [
+            "#F00",
+            "#00F"
+        ]
+
+        // essa parte deve vir da API
+        var graphData = {
+
+            title: "Notas por segmento",
+            data: [
+                [10, 100, 60, 20],
+                [5, 110, 50, 10]
+            ]
+        }
+
+        var labels = [
+            "M",
+            "F"
+        ]
+
+        const renderChart = (ctx) => { 
+
+            let datasets = graphData.data.map( (d, index) => {
+                return {
+                    data: d,
+                    label: labels[index],
+                    backgroundColor: backgroundColors[index],
+                    hoverBackgroundColor: hoverBackgroundColors[index]
+                }
+            })
+            
+            var data = {
+                labels: ["0-5", "5-7", "7-9", ">9"],
+                datasets: datasets
+            };
+            var options= {
+                title: {
+                    display: true,
+                    text: graphData.title
+                },
+                
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Nota',
+                        },
+                    }]
+                }
+            };
+
+            var myLineChart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: options
+            });
+            
+    }
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    renderChart(ctx)
+
+    </script>
+</body>

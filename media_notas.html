@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <canvas id="myChart" width="400" height="400"></canvas>
+    
+    <script>
+
+        let backgroundColors = [
+            "#F77",
+            "#FF7",
+            "#7F7"
+        ]
+
+        let hoverBackgroundColors = [
+            "#F00",
+            "#FF0",
+            "#0F0"
+        ]
+
+        // essa parte deve vir da API
+        var graphData = {
+
+            title: "Média de notas em português",
+            data: [
+                7.285714,
+                6.800000,
+                6.942857,
+                6.400000
+            ]
+        }
+
+        var labels = [
+            "Alto Risco",
+            "Médio Risco",
+            "Baixo Risco",
+        ]
+
+        const renderChart = (ctx) =>{ 
+
+            var data = {
+                    labels: ['1o bimestre', '2o bimestre','3o bimestre', '4o bimestre'],
+                    datasets: [
+                        {
+                            data:graphData.data,
+                            backgroundColor: backgroundColors[2],
+                            label: 'Média'
+                        }
+                    ]
+                };
+            var options= {
+                title: {
+                    display: true,
+                    text: graphData.title
+                },
+                
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Nota',
+                        },
+                    }]
+                }
+            };
+
+            var myLineChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+            
+    }
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    renderChart(ctx)
+
+    </script>
+</body>
