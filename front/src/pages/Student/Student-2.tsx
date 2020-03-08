@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import { 
-  IonGrid, 
-  IonRow, 
+import {
+  IonGrid,
+  IonRow,
   IonCol,
-  IonContent, 
-  IonHeader, 
-  IonPage, 
+  IonContent,
+  IonHeader,
+  IonPage,
 
   IonImg,
   IonAvatar,
@@ -15,13 +15,13 @@ import {
   IonSlides,
   IonSlide,
 
-  IonList, 
-  IonItem, 
+  IonList,
+  IonItem,
   IonLabel,
 
-  IonTitle, 
+  IonTitle,
   IonToolbar,
-  IonCard, 
+  IonCard,
   IonCardTitle,
   IonCardHeader,
   IonCardSubtitle,
@@ -29,7 +29,7 @@ import {
 } from '@ionic/react';
 
 import { Avatar, ProgressBar } from '../../components';
-import './Student.css'; 
+import './Student.css';
 
 const slideOpts = {
   slidesPerView: 1,
@@ -61,13 +61,13 @@ const student = {
   categories: [
     {
       id: 1,
-      title: 'matemática', 
+      title: 'matemática',
       percentOne: 90,
       percentTwo: 52,
     },
      {
       id: 1,
-      title: 'física', 
+      title: 'física',
       percentOne: 40,
       percentTwo: 12,
     },
@@ -85,9 +85,9 @@ const redirectAny = (id: number) => console.log('redirect', id);
 
 const Student: React.FC<RouteComponentProps> = ({ match, history }) => {
 
-  setTimeout(() => {
-    history.push('/notification/mentorado');
-  }, 3000);
+  // setTimeout(() => {
+  //   history.push('/notification/mentorado');
+  // }, 3000);
 
   return (
     <IonPage>
@@ -97,7 +97,7 @@ const Student: React.FC<RouteComponentProps> = ({ match, history }) => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonCard className="card hero">   
+        <IonCard className="card hero">
           <h3 className="title">Olá, {student.name}!</h3>
           <IonItem className="hero-item" lines="none">
             <Avatar url={student.image} />
@@ -134,7 +134,7 @@ const Student: React.FC<RouteComponentProps> = ({ match, history }) => {
           ))}
         </IonSlides>
 
-        <IonCard className="card mentor">   
+        <IonCard className="card mentor">
           <h3 className="title">Mentorias</h3>
           <IonList>
             {student.mentors.map((mentor, i) => (
@@ -142,9 +142,9 @@ const Student: React.FC<RouteComponentProps> = ({ match, history }) => {
                 <Avatar url={mentor.url} />
                 <IonLabel>{mentor.name}</IonLabel>
               </IonItem>
-            ))}                
+            ))}
           </IonList>
-        </IonCard>       
+        </IonCard>
       </IonContent>
     </IonPage>
   );
