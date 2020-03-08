@@ -1,6 +1,7 @@
 "use strict"
 
 const Hapi = require("@hapi/hapi")
+const mocks = require('./mocks');
 
 const init = async () => {
   const server = Hapi.server({
@@ -14,19 +15,31 @@ const init = async () => {
     handler: function(req, h) {
       return "Movile Hack Afro - Xpert"
     }
-  })
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/teacher/classes',
+    handler: function (request, h) {
+      return mocks.classes;
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/teacher/class-detail',
+    handler: function (request, h) {
+      return mocks.classDetail;
+    }
+  });
 
   server.route({
     method: 'GET',
     path: '/student',
     handler: function (request, h) {
-      const mock = {
-        score: '20',
-      };
-
-      return mock;
+      return mocks.student;
     }
-});
+  });
 
   await server.start();
 
