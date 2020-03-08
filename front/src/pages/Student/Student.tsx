@@ -11,6 +11,9 @@ import {
   IonAvatar,
   IonProgressBar,
 
+  IonSlides,
+  IonSlide,
+
   IonList, 
   IonItem, 
   IonLabel,
@@ -28,8 +31,12 @@ import { Avatar, ProgressBar } from '../../components';
 import './Student.css'; 
 
 const slideOpts = {
-  initialSlide: 1,
-  speed: 400
+  slidesPerView: 1,
+  slidesPerColumn: 1,
+  slidesPerGroup: 1,
+  watchSlidesProgress: true,
+  spaceBetween: 0,
+  virtualTranslate: true,
 };
 
 const student = {
@@ -57,6 +64,12 @@ const student = {
       percentOne: 90,
       percentTwo: 52,
     },
+     {
+      id: 1,
+      title: 'física', 
+      percentOne: 40,
+      percentTwo: 12,
+    },
   ]
 }
 
@@ -70,75 +83,61 @@ const getStatusByPercentage = (percentage : number) => {
 const Teacher: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader slot="start">
         <IonToolbar>
-          
+          <IonImg src="assets/logo_estude_facil.png" className="badges" />
         </IonToolbar>
       </IonHeader>
       <IonContent>
 
-        <IonGrid>
-          <IonRow>   
-            <IonCard className="hero">   
-              <IonTitle>Olá, {student.name}!</IonTitle>
-              <IonItem className="hero-item" lines="none">
-                <Avatar url={student.image} />
-                <div className="progress">
-                  <ProgressBar value={student.score / 100} color={getStatusByPercentage(student.score)} prefix="XP" />
-                </div>
-              </IonItem>
-            </IonCard>
-          </IonRow>
+        <IonCard className="card hero">   
+          <h3 className="title">Olá, {student.name}!</h3>
+          <IonItem className="hero-item" lines="none">
+            <Avatar url={student.image} />
+            <div className="progress">
+              <ProgressBar value={student.score / 100} color={getStatusByPercentage(student.score)} prefix="XP" />
+            </div>
+          </IonItem>
+        </IonCard>
 
-          <IonRow>
-            {student.categories.map((item, i) => (
-                <IonCol key={i}>
-                  <IonCard className="card">
-                    <IonTitle className="title">Disciplinas</IonTitle>
-                    <IonCardHeader className="card-header">
-                      <IonCardTitle>{item.title}</IonCardTitle>
+        <IonSlides>
+          {student.categories.map((item, i) => (
+            <IonSlide className="full" key={i}>
+              <IonCard className="card card--full">
+                <h3 className="title">Disciplinas</h3>
+                <IonCardHeader className="card-header">
+                  <IonCardTitle>{item.title}</IonCardTitle>
 
-                      <IonItem className="card-progress">
-                        <ProgressBar value={item.percentOne / 100} color={getStatusByPercentage(item.percentOne)} prefix={`${item.percentOne}%`} />
-                      </IonItem>
+                  <IonItem className="card-progress">
+                    <ProgressBar value={item.percentOne / 100} color={getStatusByPercentage(item.percentOne)} prefix={`${item.percentOne}%`} />
+                    frequência
+                  </IonItem>
 
-                      <IonItem className="card-progress">
-                        <ProgressBar value={item.percentTwo / 100} color={getStatusByPercentage(item.percentTwo)} prefix={`${item.percentTwo}%`} />
-                      </IonItem>
-                    </IonCardHeader>
+                  <IonItem className="card-progress">
+                    <ProgressBar value={item.percentTwo / 100} color={getStatusByPercentage(item.percentTwo)} prefix={`${item.percentTwo}%`} />
+                    desempenho
+                  </IonItem>
+                </IonCardHeader>
 
-                    <IonCardContent>
-                      <IonImg src="assets/badges.png" className="badges" />
-                    </IonCardContent>
-                  </IonCard>
-                </IonCol>
-            ))}
-          </IonRow>
-
-          <IonRow>
-            <IonCol>
-              <IonCard className="mentor">   
-                <IonTitle className="title">Mentorias</IonTitle>
-
-                <IonList>
-                  {student.mentors.map((mentor, i) => (
-                    <IonItem>
-                      <Avatar url={mentor.url} />
-                      <IonLabel>{mentor.name}</IonLabel>
-                    </IonItem>
-                  ))}                
-                </IonList>
+                <IonCardContent>
+                  <IonImg src="assets/badges.png" className="badges" />
+                </IonCardContent>
               </IonCard>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
+            </IonSlide>
+          ))}
+        </IonSlides>
 
-        
-
-        
-        <IonTitle>Turma</IonTitle>
-
-      
+        <IonCard className="card mentor">   
+          <h3 className="title">Mentorias</h3>
+          <IonList>
+            {student.mentors.map((mentor, i) => (
+              <IonItem key={i}>
+                <Avatar url={mentor.url} />
+                <IonLabel>{mentor.name}</IonLabel>
+              </IonItem>
+            ))}                
+          </IonList>
+        </IonCard>       
       </IonContent>
     </IonPage>
   );

@@ -1,0 +1,62 @@
+.ionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #f00;
+}
+
+.textCardBold {
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+  color: #000;
+  font-weight: bold;
+}
+
+.ionGrid {
+  /* background-color: #f00; */
+  padding: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.textRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.textCard {
+  display: flex;
+  /* flex: 1; */
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.ionButton {
+  width: 100px;
+}
+
+.ionCardContent {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  justify-content: center;
+  align-items: center;
+}
+
+.inronMentor {
+  display: flex;
+  flex-direction: column;
+}
+
+.ionList {
+  display: flex;
+  flex-direction: row;
+}
