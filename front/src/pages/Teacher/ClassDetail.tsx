@@ -360,7 +360,11 @@ const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <IonBackButton
+              icon="buttonIcon"
+              defaultHref="/professor"
+              text="Voltar"
+            ></IonBackButton>
             <IonTitle>Detalhes da classe</IonTitle>
           </IonButtons>
         </IonToolbar>
@@ -370,7 +374,9 @@ const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
         <IonList>
           {students.map(student => (
             <IonItem button key={Math.random()} routerLink="/classe/aluno">
-              <IonLabel>{student.name.first} {student.name.last}</IonLabel>
+              <IonLabel>
+                {student.name.first} {student.name.last}
+              </IonLabel>
             </IonItem>
           ))}
         </IonList>

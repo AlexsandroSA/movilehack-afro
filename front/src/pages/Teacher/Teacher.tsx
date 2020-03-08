@@ -14,6 +14,8 @@ import {
   IonCheckbox,
   IonItemSliding,
   IonItemOption,
+  IonButtons,
+  IonMenuButton,
   IonItemOptions,
   IonContent
 } from "@ionic/react";
@@ -30,15 +32,10 @@ const classes = [
 const Teacher: React.FC = () => {
   return (
     <IonPage>
-
       <IonContent>
         <IonList>
           {classes.map(classe => (
-            <IonItem
-              button
-              key={Math.random()}
-              routerLink="/professor/classe"
-            >
+            <IonItem button key={Math.random()} routerLink="/professor/classe">
               <IonLabel>{classe.name}</IonLabel>
             </IonItem>
           ))}
