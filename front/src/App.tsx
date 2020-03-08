@@ -5,7 +5,10 @@ import { IonReactRouter } from '@ionic/react-router';
 
 /*  Page */
 import TeacherHome from './pages/Teacher/Teacher';
+import ClassDetailPage from './pages/Teacher/ClassDetail';
+import StudentDetailPage from "./pages/Teacher/StudentDetail";
 import StudentHome from './pages/Student/Student';
+import Notification from './pages/Notification';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -32,7 +35,22 @@ const App: React.FC = () => (
     <IonReactRouter>
       <Route path="/professor" component={TeacherHome} exact={true} />
       <Route path="/aluno" component={StudentHome} exact={true} />
-      <Route path="/" render={() => <Redirect to="/professor" />} exact={true} />
+      <Route path="/notification" component={Notification} exact={true} />
+      <Route
+        path="/professor/classe"
+        component={ClassDetailPage}
+        exact={true}
+      />
+      <Route
+        path="/classe/aluno"
+        component={StudentDetailPage}
+        exact={true}
+      />
+      <Route
+        path="/"
+        render={() => <Redirect to="/professor" />}
+        exact={true}
+      />
     </IonReactRouter>
   </IonApp>
 );
