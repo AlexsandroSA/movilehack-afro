@@ -25,18 +25,22 @@ interface StudentDetailsProps extends RouteComponentProps<{}> {}
 
 const StudentDetailPage: React.FC<StudentDetailsProps> = ({ match }) => {
   return (
-    <IonPage class="background-app">
+    <IonPage className="background-app">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <IonBackButton
+              icon="buttonIcon"
+              defaultHref="/professor/classe"
+              text="Voltar"
+            ></IonBackButton>
             <IonTitle>Fulano De tal em Matemática</IonTitle>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
-
+        <iframe src="http://localhost:8000/graph2.html"></iframe>
       </IonContent>
     </IonPage>
   );

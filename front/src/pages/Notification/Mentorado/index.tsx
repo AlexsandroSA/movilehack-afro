@@ -19,22 +19,22 @@ import '../styles.css';
 const Notification: React.FC = () => {
   return (
     <IonPage>
-      <IonContent>
-        <IonGrid>
+      <IonContent className='ionContent'>
+        <IonGrid className='ionGrid'>
           <IonRow>
 
-            <IonCard>
-              <IonCardContent>
+            <IonCard className='ionCard'>
+              <IonCardContent className='ionCardContent'>
 
                 <IonText className='textCard'>OBA!</IonText>
                 <IonText className='textCard'>Um amigo</IonText>
                 <IonText className='textCard'>Quer te ajudar?</IonText>
                 <IonRow>
 
-                  <IonButton color='danger'>
+                  <IonButton className='ionButton' color='danger'>
                     Cancel
                   </IonButton>
-                  <IonButton color='success'>
+                  <IonButton className='ionButton' color='success'>
                     OK
                   </IonButton>
                 </IonRow>

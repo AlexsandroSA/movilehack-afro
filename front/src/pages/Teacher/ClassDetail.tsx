@@ -1,6 +1,7 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import "./class-detail.css";
+import { Chart } from "chart.js";
 
 import {
   IonHeader,
@@ -19,13 +20,11 @@ import {
   IonItemOption,
   IonItemOptions,
   IonBackButton,
-  IonContent
+  IonContent,
+  IonSearchbar
 } from "@ionic/react";
 
-interface ClassDetailPageProps extends RouteComponentProps<{
-
-}> {}
-
+interface ClassDetailPageProps extends RouteComponentProps<{}> {}
 
 
 const students = [
@@ -357,20 +356,31 @@ const students = [
 const ClassDetailPage: React.FC<ClassDetailPageProps> = ({ match }) => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
+      <IonHeader color="primary">
+        <IonToolbar color="primary">
           <IonButtons slot="start">
-            <IonBackButton />
+            <IonBackButton
+              icon="buttonIcon"
+              defaultHref="/professor"
+              text="Voltar"
+            ></IonBackButton>
             <IonTitle>Detalhes da classe</IonTitle>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
+        <iframe src="http://localhost:8000/graph3.html"></iframe>
+
+        <IonSearchbar showCancelButton="always"></IonSearchbar>
+
         <IonList>
           {students.map(student => (
             <IonItem button key={Math.random()} routerLink="/classe/aluno">
-              <IonLabel>{student.name.first} {student.name.last}</IonLabel>
+              <IonLabel>
+                {student.name.first} {student.name.last}
+                <p>8 Ano A - Sala XPTO - Manhã</p>
+              </IonLabel>
             </IonItem>
           ))}
         </IonList>
